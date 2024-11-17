@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QC Devs Projects</title>
+    <link rel="icon" href="logo.png" type="image/png"> <!-- Tab icon -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>QC Devs Projects</h1>
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Middle logo -->
+        <p>Welcome to the QC Devs project showcase! Explore our innovative tech projects. Some projects may still be in development or private.</p>
+    </header>
+
+    <main>
+        <div id="projectInfo" class="project-info"></div> <!-- Placeholder for project info -->
+    </main>
+
+    <script>
+        // Function to fetch project data from projects.json
+        async function loadProjects() {
+            try {
+                const response = await fetch('projects.json'); // Fetch the project data
+                const projects = await response.json(); // Parse the JSON data
+
+                const projectInfoDiv = document.getElementById('projectInfo'); // Get the project info div
+                projectInfoDiv.innerHTML = ''; // Clear any existing content
+
+                // Loop through each project and create HTML elements
+                projects.forEach(project => {
+                    const projectCard = document.createElement('div'); // Create a new div for each project
+                    projectCard.className = 'project-card'; // Add a class for styling
+
+                    const projectTitle = document.createElement('h2'); // Create title element
+                    projectTitle.innerText = project.name; // Set title text
+                    projectCard.appendChild(projectTitle); // Append title to project card
+
+                    const projectDescription = document.createElement('p'); // Create description element
+                    projectDescription.innerText = project.description; // Set description text
+                    projectCard.appendChild(projectDescription); // Append description to project card
+
+                    const projectLink = document.createElement('a'); // Create a link element
+                    projectLink.href = project.link; // Set link URL
+                    projectLink.target = '_blank'; // Open in a new tab
+                    projectLink.innerText = 'View Project'; // Link text
+                    projectCard.appendChild(projectLink); // Append link to project card
+
+                    projectInfoDiv.appendChild(projectCard); // Append project card to the main div
+                });
+            } catch (error) {
+                console.error('Error loading projects:', error); // Log any errors
+            }
+        }
+
+        loadProjects(); // Call the function to load projects on page load
+    </script>
+</body>
+</html>
