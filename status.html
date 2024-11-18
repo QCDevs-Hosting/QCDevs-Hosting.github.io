@@ -76,6 +76,13 @@
             color: #008080; /* Maintain text color when hovered */
         }
 
+        /* Specific White Text Styling for "Edition", IP, and Players */
+        .edition,
+        .server-ip,
+        .server-players {
+            color: #FFFFFF; /* Set color for Edition, IP, and Players text to white */
+        }
+
         /* Footer Section */
         footer {
             padding: 15px;
@@ -188,11 +195,11 @@
 
                     serverDiv.innerHTML = `
                         <h2>${server.name}</h2>
-                        <p>IP: ${server.ip}:${server.port}</p>
+                        <p class="server-ip">IP: ${server.ip}:${server.port}</p>
                         <p class="server-status ${statusData.status === 'Online' ? 'online' : 'offline'}">
                             Status: ${statusData.status}
                         </p>
-                        <p>Players: ${statusData.players}</p>
+                        <p class="server-players">Players: ${statusData.players}</p>
                         <button class="copy-btn" onclick="copyToClipboard('${server.ip}:${server.port}')">Copy IP</button>
                     `;
                     serverList.appendChild(serverDiv);
