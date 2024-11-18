@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QC Devs Status</title>
+    <title>QC Devs Server Status</title>
     <link rel="icon" href="qc-logo.png" type="image/x-icon">
     <style>
         /* General Styling */
@@ -83,12 +83,6 @@
             color: #FFFFFF; /* Set color for Edition, IP, and Players text to white */
         }
 
-        /* Specific White Text for Java and Bedrock Editions */
-        .java-edition,
-        .bedrock-edition {
-            color: #FFFFFF; /* Set Java and Bedrock Edition text to white */
-        }
-
         /* Footer Section */
         footer {
             padding: 15px;
@@ -135,7 +129,7 @@
     <!-- Loading Screen -->
     <div id="loadingScreen">
         <div class="loader"></div>
-        <div id="loadingMessage">Loading QC Devs status, please wait...</div>
+        <div id="loadingMessage">Loading QC Devs server status, please wait...</div>
     </div>
 
     <!-- Header Section -->
@@ -206,8 +200,6 @@
                             Status: ${statusData.status}
                         </p>
                         <p class="server-players">Players: ${statusData.players}</p>
-                        <p class="java-edition">Edition: Java</p>
-                        <p class="bedrock-edition">Edition: Bedrock</p>
                         <button class="copy-btn" onclick="copyToClipboard('${server.ip}:${server.port}')">Copy IP</button>
                     `;
                     serverList.appendChild(serverDiv);
