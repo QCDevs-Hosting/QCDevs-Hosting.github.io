@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QC Devs Server Status</title>
+    <title>QC Devs Status</title>
     <link rel="icon" href="qc-logo.png" type="image/x-icon">
     <style>
         /* General Styling */
@@ -76,13 +76,6 @@
             color: #008080; /* Maintain text color when hovered */
         }
 
-        /* Specific White Text Styling for "Edition", IP, and Players */
-        .edition,
-        .server-ip,
-        .server-players {
-            color: #FFFFFF; /* Set color for Edition, IP, and Players text to white */
-        }
-
         /* Footer Section */
         footer {
             padding: 15px;
@@ -90,6 +83,16 @@
             color: #008080;
             font-size: 0.9rem;
             border-top: 2px solid #008080;
+        }
+
+        footer a {
+            color: #008080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Loading Screen */
@@ -129,7 +132,7 @@
     <!-- Loading Screen -->
     <div id="loadingScreen">
         <div class="loader"></div>
-        <div id="loadingMessage">Loading QC Devs server status, please wait...</div>
+        <div id="loadingMessage">Loading QC Devs status, please wait...</div>
     </div>
 
     <!-- Header Section -->
@@ -144,7 +147,9 @@
     </div>
 
     <!-- Footer Section -->
-    <footer id="footer">© 2024 QC Devs. Built with care by William Holley.</footer>
+    <footer id="footer">
+        © 2024 QC Devs. Built with care by <a href="https://github.com/william2sober" target="_blank">William Holley</a>.
+    </footer>
 
     <script>
         // Function to copy IP to clipboard
@@ -195,11 +200,11 @@
 
                     serverDiv.innerHTML = `
                         <h2>${server.name}</h2>
-                        <p class="server-ip">IP: ${server.ip}:${server.port}</p>
+                        <p>IP: ${server.ip}:${server.port}</p>
                         <p class="server-status ${statusData.status === 'Online' ? 'online' : 'offline'}">
                             Status: ${statusData.status}
                         </p>
-                        <p class="server-players">Players: ${statusData.players}</p>
+                        <p>Players: ${statusData.players}</p>
                         <button class="copy-btn" onclick="copyToClipboard('${server.ip}:${server.port}')">Copy IP</button>
                     `;
                     serverList.appendChild(serverDiv);
