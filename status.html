@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QC Devs Server Status</title>
+    <link rel="icon" href="qcdevs-icon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #FFD700;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            background-color: #111;
+            border-bottom: 2px solid #FFD700;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #FFD700;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: url('qcdevs-logo.png') center center / cover no-repeat;
+            margin: 15px auto;
+        }
+        .server-list {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .server {
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            background-color: #222;
+            margin: 15px;
+            padding: 15px;
+            color: #FFF;
+        }
+        .server h2 {
+            color: #FFD700;
+        }
+        .server-status {
+            font-weight: bold;
+        }
+        .online {
+            color: #32CD32;
+        }
+        .offline {
+            color: #FF4500;
+        }
+        .copy-btn {
+            background-color: #FFD700;
+            color: #000;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .copy-btn:hover {
+            background-color: #FFC107;
+        }
+        .support-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            color: #FFD700;
+            background-color: #111;
+            border: 2px solid #FFD700;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .support-btn:hover {
+            background-color: #FFD700;
+            color: #000;
+        }
+        footer {
+            padding: 15px;
+            background-color: #111;
+            color: #FFD700;
+            font-size: 0.9rem;
+            border-top: 2px solid #FFD700;
+        }
+        /* Loading Screen */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #FFD700;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #loadingMessage {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .loader {
+            border: 8px solid #333; 
+            border-top: 8px solid #FFD700;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="loader"></div>
+        <div id="loadingMessage">Loading QC Devs server status, please wait...</div>
+    </div>
+
+    <header>
+        <div class="logo"></div>
+        <h1>QC Devs Server Status</h1>
+    </header>
+    <div class="server-list" id="serverList">
+        <!-- Server status will be displayed here -->
+    </div>
+    <a href="https://discord.gg/qcdevs" class="support-btn" target="_blank">Support</a>
+    <footer id="footer">Last updated: <span id="updateTime">Now</span> - Refreshes every 30 seconds</footer>
+
+    <script>
+        async function copyToClipboard(ip) {
+            try {
+                await navigator.clipboard.writeText(ip);
+                alert(`Copied IP: ${ip}`);
+            } catch (err) {
+                console.error("Failed to copy IP:", err);
+            }
+        }
+
+        async function fetchServerStatus(server) {
+            let apiUrl;
+            if (server.type === "java") {
+                apiUrl = `https://mcapi.us/server/status?ip=${server.ip}&port=${server.port}`;
+            } else if (server.type === "bedrock") {
+                apiUrl = `https://api.mcsrvstat.us/bedrock/2/${server.ip}:${server.port}`;
+            }
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                return {
+                    status: data.online ? 'Online' : 'Offline',
+                    players: data.players ? (data.players.online || 0) : 0,
+                };
+            } catch {
+                return { status: "Error", players: 0 };
+            }
+        }
+
+        async function updateServerStatus() {
+            try {
+                const response = await fetch('servers.json');
+                const servers = await response.json();
+
+                const serverList = document.getElementById("serverList");
+                serverList.innerHTML = "";
+
+                for (const server of servers) {
+                    const statusData = await fetchServerStatus(server);
+
+                    const serverDiv = document.createElement("div");
+                    serverDiv.className = "server";
+
+                    serverDiv.innerHTML = `
+                        <h2>${server.name}</h2>
+                        <p>IP: ${server.ip}:${server.port}</p>
+                        <p class="server-status ${statusData.status === 'Online' ? 'online' : 'offline'}">
+                            Status: ${statusData.status}
+                        </p>
+                        <p>Players: ${statusData.players}</p>
+                        <button class="copy-btn" onclick="copyToClipboard('${server.ip}:${server.port}')">Copy IP</button>
+                    `;
+                    serverList.appendChild(serverDiv);
+                }
+
+                document.getElementById("updateTime").innerText = new Date().toLocaleTimeString();
+            } finally {
+                document.getElementById("loadingScreen").style.display = "none";
+            }
+        }
+
+        updateServerStatus();
+        setInterval(updateServerStatus, 30000);
+    </script>
+</body>
+</html>
