@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Subdomain Program - QC Devs</title>
+    <!-- Add QC logo as the favicon -->
+    <link rel="icon" href="qc-logo.png" type="image/x-icon">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #CCCCCC;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #111;
+            border-bottom: 2px solid #CCCCCC;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #CCCCCC;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: url('qc-logo.png') center center / cover no-repeat;
+            margin: 15px auto;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            background-color: #222;
+            border: 2px solid #CCCCCC;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .info-box h2 {
+            margin: 0 0 10px;
+            color: #008080;
+        }
+
+        .info-box p {
+            margin: 10px 0 0;
+            color: #CCCCCC;
+            line-height: 1.5;
+        }
+
+        footer {
+            padding: 15px;
+            background-color: #111;
+            color: #CCCCCC;
+            font-size: 0.9rem;
+            border-top: 2px solid #CCCCCC;
+        }
+
+        footer a {
+            color: #008080;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo"></div>
+        <h1>Free Subdomain Program</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Support the server and claim your free subdomain!</h2>
+        <div class="info-section">
+            <!-- How to Get a Subdomain -->
+            <div class="info-box">
+                <h2>How to Get a Subdomain</h2>
+                <p>- **Invite Friends**: Invite at least **5 active members** to the server.</p>
+                <p>- **Boost the Server**: Server boosters are eligible for a subdomain.</p>
+                <p>- **One-Time Payment**: Pay a **$3 one-time fee** for lifetime access to your subdomain if boosting or inviting isn't possible.</p>
+            </div>
+
+            <!-- Eligibility Requirements -->
+            <div class="info-box">
+                <h2>Eligibility Requirements</h2>
+                <p>- You must remain an active member of the server.</p>
+                <p>- Invited friends must stay active in the server. If your friends leave, your subdomain may be revoked.</p>
+                <p>- If you unboost the server, your subdomain will be suspended until boosting is resumed.</p>
+            </div>
+
+            <!-- Consequences -->
+            <div class="info-box">
+                <h2>What Happens If You No Longer Qualify?</h2>
+                <p>- If you lose eligibility (e.g., friends leave, you unboost), your subdomain will be **suspended**.</p>
+                <p>- To reinstate your subdomain, you must:</p>
+                <ul>
+                    <li>Re-invite friends to meet the minimum.</li>
+                    <li>Reboost the server.</li>
+                    <li>The $3 lifetime fee remains unaffected.</li>
+                </ul>
+            </div>
+
+            <!-- Rules -->
+            <div class="info-box">
+                <h2>Subdomain Rules & Usage</h2>
+                <p>- Subdomains must follow all server rules and **Terms of Service**.</p>
+                <p>- Misusing a subdomain (e.g., hosting prohibited content) will lead to immediate suspension and potential server ban.</p>
+            </div>
+
+            <!-- Need Help -->
+            <div class="info-box">
+                <h2>Need Help?</h2>
+                <p>For assistance setting up your subdomain or understanding the requirements, please contact a moderator or admin.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        © 2024 QC Devs. Built with care by <a href="https://github.com/william2sober" target="_blank">William Holley</a>.
+    </footer>
+</body>
+</html>
