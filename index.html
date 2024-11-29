@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QC Devs | Cloud Hosting</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #fff;
+            background-color: #ff7f50; /* Coral color */
         }
 
         header {
-            background-color: #1a1a2e;
-            color: white;
             padding: 20px 40px;
             text-align: center;
         }
@@ -30,18 +30,23 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             margin-top: 15px;
-            padding: 10px 25px;
-            color: white;
-            background-color: #00aaff;
+            padding: 10px 20px;
+            color: #ff7f50;
+            background-color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
         }
 
+        .btn i {
+            margin-left: 10px;
+        }
+
         .btn:hover {
-            background-color: #0077cc;
+            background-color: #ffe5d9; /* Lighter coral for hover */
         }
 
         section {
@@ -60,28 +65,6 @@
             line-height: 1.6;
         }
 
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .feature {
-            flex: 1;
-            min-width: 200px;
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature h3 {
-            color: #00aaff;
-            margin-bottom: 10px;
-        }
-
         .plans {
             display: flex;
             justify-content: center;
@@ -92,10 +75,12 @@
         .plan {
             flex: 1;
             min-width: 250px;
-            border: 2px solid #00aaff;
+            background: #fff;
+            color: #ff7f50;
             border-radius: 8px;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
         }
 
@@ -104,7 +89,7 @@
         }
 
         .plan h3 {
-            color: #00aaff;
+            color: #ff7f50;
             margin-bottom: 15px;
         }
 
@@ -124,8 +109,6 @@
         }
 
         footer {
-            background: #1a1a2e;
-            color: white;
             text-align: center;
             padding: 20px;
         }
@@ -135,66 +118,44 @@
     <header>
         <h1>QC Devs</h1>
         <p>Transform your ideas into reality with QC Devs. Develop, deploy, and scale your projects seamlessly.</p>
-        <a href="#plans" class="btn">Get Started</a>
+        <a href="#plans" class="btn">Get Started <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
     </header>
 
     <section>
-        <h2>Everything You Need to Scale</h2>
-        <p>Built with advanced technology to provide the ultimate development experience.</p>
-        <div class="features">
-            <div class="feature">
-                <h3>Lightning-Fast Performance</h3>
-                <p>Optimized tools and infrastructure for faster development.</p>
-            </div>
-            <div class="feature">
-                <h3>Advanced Security</h3>
-                <p>End-to-end encryption, DDoS protection, and secure hosting.</p>
-            </div>
-            <div class="feature">
-                <h3>Scalable Resources</h3>
-                <p>Expand your resources as your projects grow.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="plans">
         <h2>Simple, Transparent Pricing</h2>
         <div class="plans">
             <div class="plan">
-                <h3>Starter</h3>
-                <p class="price">$0 /mo</p>
+                <h3>STARTER</h3>
+                <p class="price">$5</p>
                 <ul>
-                    <li>0.5 vCores</li>
                     <li>1GB RAM</li>
-                    <li>3GB Storage</li>
-                    <li>2TB Bandwidth</li>
-                    <li>Priority Support</li>
-                </ul>
-                <a href="#" class="btn">Get Started</a>
-            </div>
-            <div class="plan">
-                <h3>Developer</h3>
-                <p class="price">$2 /mo</p>
-                <ul>
-                    <li>1 vCores</li>
-                    <li>2GB RAM</li>
-                    <li>5GB Storage</li>
-                    <li>4TB Bandwidth</li>
-                    <li>Priority Support</li>
-                </ul>
-                <a href="#" class="btn">Get Started</a>
-            </div>
-            <div class="plan">
-                <h3>Pro</h3>
-                <p class="price">$5 /mo</p>
-                <ul>
-                    <li>1.5 vCores</li>
-                    <li>5GB RAM</li>
+                    <li>2 vCPUs</li>
                     <li>10GB Storage</li>
-                    <li>4TB+ Bandwidth</li>
                     <li>Priority Support</li>
                 </ul>
-                <a href="#" class="btn">Get Started</a>
+                <a href="#" class="btn">Get Started <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="plan">
+                <h3>PRO</h3>
+                <p class="price">$10</p>
+                <ul>
+                    <li>2GB RAM</li>
+                    <li>4 vCPUs</li>
+                    <li>20GB Storage</li>
+                    <li>Premium Support</li>
+                </ul>
+                <a href="#" class="btn">Get Started <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="plan">
+                <h3>ULTIMATE</h3>
+                <p class="price">$20</p>
+                <ul>
+                    <li>4GB RAM</li>
+                    <li>8 vCPUs</li>
+                    <li>50GB Storage</li>
+                    <li>VIP Support</li>
+                </ul>
+                <a href="#" class="btn">Get Started <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
         </div>
     </section>
