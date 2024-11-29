@@ -1,311 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QC Devs</title>
-    <link rel="icon" href="qc-logo.png" type="image/png">
+    <title>QC Devs | Cloud Hosting</title>
     <style>
-        /* General Styling */
         body {
-            font-family: 'Poppins', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background: linear-gradient(45deg, #1d1d1d, #0d0d0d, #333333);
-            background-size: 400% 400%;
-            animation: gradientAnimation 10s ease infinite;
-            color: #FFFFFF;
-            opacity: 0;
-            visibility: hidden;
-            transition: visibility 0s, opacity 0.5s linear;
+            color: #333;
         }
 
-        /* Body loaded animation */
-        body.loaded {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Header */
         header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 20px 40px;
             text-align: center;
-            padding: 30px 15px;
-            background: #111111;
-            border-bottom: 2px solid #008080;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        header img {
-            width: 120px;
-            margin-bottom: 15px;
-            border-radius: 50%;
-            object-fit: cover;
         }
 
         header h1 {
-            margin: 10px 0;
-            font-size: 3em;
-            letter-spacing: 1px;
-            font-weight: bold;
-            color: #008080;
+            font-size: 2.5em;
+            margin: 0;
         }
 
         header p {
+            margin: 10px 0;
             font-size: 1.2em;
-            color: #CCCCCC;
         }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            margin-top: -20px;
-        }
-
-        .hero h2 {
-            font-size: 3em;
-            font-weight: bold;
-            color: #008080;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 25px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #CCCCCC;
-        }
-
-        .hero a {
+        .btn {
             display: inline-block;
-            padding: 15px 30px;
-            background: #008080;
-            color: #FFFFFF;
+            margin-top: 15px;
+            padding: 10px 25px;
+            color: white;
+            background-color: #00aaff;
             text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .hero a:hover {
-            background: #666666;
-            color: #FFFFFF;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.6);
-            text-align: center;
-        }
-
-        .projects h2 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #008080;
-        }
-
-        .project-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .project-card {
-            background: #f4f4f4;
-            border: 1px solid #008080;
-            border-radius: 10px;
-            padding: 30px;
-            width: 280px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            color: #333333;
-        }
-
-        .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
-        }
-
-        .project-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
+            border-radius: 5px;
             font-weight: bold;
         }
 
-        .project-card p {
-            margin-bottom: 15px;
-            color: #666666;
+        .btn:hover {
+            background-color: #0077cc;
         }
 
-        .project-card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 12px 18px;
-            background: #008080;
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .project-card a:hover {
-            background: #666666;
-            color: #FFFFFF;
-        }
-
-        /* Footer */
-        footer {
+        section {
+            padding: 40px;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: auto;
-            background: #111111;
-            border-top: 2px solid #008080;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
 
-        footer p {
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        section p {
             font-size: 1.1em;
-            color: #CCCCCC;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        footer a {
-            color: #008080;
-            text-decoration: none;
-            font-weight: bold;
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Loading Circle */
-        .loading-circle {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            border: 10px solid transparent;
-            border-top: 10px solid #008080;
-            border-radius: 50%;
-            animation: spin 2s linear infinite, blink 0.75s step-end infinite;
+        .feature h3 {
+            color: #00aaff;
+            margin-bottom: 10px;
         }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+        .plans {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        @keyframes blink {
-            50% {
-                border-top-color: transparent;
-            }
+        .plan {
+            flex: 1;
+            min-width: 250px;
+            border: 2px solid #00aaff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
         }
 
-        /* Gradient Animation */
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
+        .plan:hover {
+            transform: scale(1.05);
+        }
 
-            50% {
-                background-position: 100% 50%;
-            }
+        .plan h3 {
+            color: #00aaff;
+            margin-bottom: 15px;
+        }
 
-            100% {
-                background-position: 0% 50%;
-            }
+        .price {
+            font-size: 2em;
+            margin: 15px 0;
+        }
+
+        .plan ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .plan ul li {
+            margin: 10px 0;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
-
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-circle"></div>
-
-    <!-- Header -->
     <header>
-        <img src="qc-logo.png" alt="QC Devs Logo">
         <h1>QC Devs</h1>
-        <p>Innovative Solutions, Powered by Technology</p>
+        <p>Transform your ideas into reality with QC Devs. Develop, deploy, and scale your projects seamlessly.</p>
+        <a href="#plans" class="btn">Get Started</a>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Welcome to QC Devs</h2>
-        <p>At QC Devs, we specialize in turning your vision into reality. With our passion for technology and creativity, we deliver innovative solutions that meet your unique needs. Dive into our projects and become part of our exciting journey.</p>
-        <a href="#projects">Explore Our Work</a>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-list" id="project-list">
-            <!-- Projects will be populated dynamically -->
+    <section>
+        <h2>Everything You Need to Scale</h2>
+        <p>Built with advanced technology to provide the ultimate development experience.</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Lightning-Fast Performance</h3>
+                <p>Optimized tools and infrastructure for faster development.</p>
+            </div>
+            <div class="feature">
+                <h3>Advanced Security</h3>
+                <p>End-to-end encryption, DDoS protection, and secure hosting.</p>
+            </div>
+            <div class="feature">
+                <h3>Scalable Resources</h3>
+                <p>Expand your resources as your projects grow.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="plans">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="plans">
+            <div class="plan">
+                <h3>Starter</h3>
+                <p class="price">$0 /mo</p>
+                <ul>
+                    <li>0.5 vCores</li>
+                    <li>1GB RAM</li>
+                    <li>3GB Storage</li>
+                    <li>2TB Bandwidth</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            <div class="plan">
+                <h3>Developer</h3>
+                <p class="price">$2 /mo</p>
+                <ul>
+                    <li>1 vCores</li>
+                    <li>2GB RAM</li>
+                    <li>5GB Storage</li>
+                    <li>4TB Bandwidth</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            <div class="plan">
+                <h3>Pro</h3>
+                <p class="price">$5 /mo</p>
+                <ul>
+                    <li>1.5 vCores</li>
+                    <li>5GB RAM</li>
+                    <li>10GB Storage</li>
+                    <li>4TB+ Bandwidth</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 QC Devs. Built with passion by <a href="https://github.com/william2sober" target="_blank">William Holley</a>.</p>
-        <p>Connect with us:
-            <a href="https://www.youtube.com/@QCDevs" target="_blank">YouTube</a> |
-            <a href="https://discord.gg/aXyhShmZKq" target="_blank">Discord</a>
-        </p>
+        <p>© 2024 QC Devs. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        // Simulate loading time
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.loading-circle').style.display = 'none';
-                document.body.classList.add('loaded');
-            }, 3000);
-        });
-
-        // Load projects dynamically
-        async function loadProjects() {
-            try {
-                const response = await fetch('projects.json');
-                const projects = await response.json();
-                const projectList = document.getElementById('project-list');
-
-                projects.forEach(project => {
-                    const card = document.createElement('div');
-                    card.classList.add('project-card');
-                    card.innerHTML = `
-                        <h3>${project.name}</h3>
-                        <p>${project.description}</p>
-                        <a href="${project.link}" target="_blank">View Project</a>
-                    `;
-                    projectList.appendChild(card);
-                });
-            } catch (error) {
-                const projectList = document.getElementById('project-list');
-                projectList.innerHTML = '<p>Sorry, we couldn\'t load projects at the moment.</p>';
-            }
-        }
-
-        loadProjects();
-    </script>
 </body>
-
 </html>
