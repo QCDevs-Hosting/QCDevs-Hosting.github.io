@@ -5,47 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="qc-logo.png" type="image/png">
     <title>404 | Page Not Found</title>
+
     <style>
         body {
-            background-color: black;
+            background-color: #121212; /* Darker background */
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             text-align: center;
+            flex-direction: column;
         }
+
         h1 {
-            font-size: 4rem;
+            font-size: 6rem;
             margin-bottom: 1rem;
+            font-weight: bold;
+            color: #FF6347; /* Tomato color */
         }
+
         p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
+            color: #ddd; /* Light gray for the message */
         }
+
         a {
-            color: #00bfff;
+            color: #00bfff; /* Light cyan for the link */
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2rem;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 2rem;
             border: 2px solid #00bfff;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
         }
+
         a:hover {
             background-color: #00bfff;
             color: black;
         }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #00bfff;
+            margin-bottom: 30px;
+        }
+
+        .message {
+            font-size: 1rem;
+            color: #888;
+        }
+
     </style>
 </head>
 <body>
-    <div>
-        <h1>404</h1>
-        <p>Oops! The page you're looking for doesn't exist.</p>
-        <a href="/" title="Go back to the homepage">Go Home</a>
-    </div>
+    <!-- Logo -->
+    <img src="qc-logo.png" alt="QC Devs Logo" class="logo">
+
+    <!-- Title and Message -->
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <p class="message">Please check the URL or go back to the homepage.</p>
+
+    <!-- Button -->
+    <a href="/" title="Go back to the homepage">Go Home</a>
 </body>
 </html>
