@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="3;url=https://discord.gg/aXyhShmZKq">
     <link rel="icon" href="qc-logo.png" type="image/png">
-    <title> QC Devs Discord</title>
+    <title>QC Devs | Redirecting to Discord</title>
+
     <style>
         body {
-            background-color: black;
+            background-color: #003366; /* Dark Blue */
             color: white;
             font-family: Arial, sans-serif;
             display: flex;
@@ -16,19 +17,63 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-        }
-        p {
-            font-size: 1.5rem;
             text-align: center;
+            flex-direction: column;
         }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #FFFF00; /* Yellow color for the title */
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
         a {
-            color: #CCCCCC;
+            color: #e6f0ff;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.4rem;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #FFFF00; /* Yellow hover effect */
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 20px;
+        }
+
+        .redirect-info {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #cccccc;
         }
     </style>
 </head>
 <body>
-    <p>Redirecting to our <a href="https://discord.gg/aXyhShmZKq" target="_blank">Discord server</a>...</p>
+
+    <!-- Logo and Title -->
+    <img src="qc-logo.png" alt="QC Devs Logo" class="logo">
+    <h1>Welcome to QC Devs</h1>
+
+    <!-- Redirect Message -->
+    <p>You will be redirected to our Discord server shortly.</p>
+    <p>If not, click the link below:</p>
+    <a href="https://discord.gg/aXyhShmZKq" target="_blank">Join Our Discord</a>
+
+    <!-- Optional Info -->
+    <div class="redirect-info">
+        <p>Redirecting in 3 seconds...</p>
+    </div>
+
 </body>
 </html>
