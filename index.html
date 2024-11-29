@@ -8,6 +8,9 @@
     <!-- Font Awesome Free CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+    <!-- Favicon for the website (add your logo file here) -->
+    <link rel="icon" type="image/png" href="qc-logo.png">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,34 +26,9 @@
             background-color: #002244; /* Darker Blue */
         }
 
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-
-        header p {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 15px;
-            padding: 10px 20px;
-            color: #003366;
-            background-color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .btn i {
-            margin-left: 10px;
-        }
-
-        .btn:hover {
-            background-color: #e6f0ff; /* Light blue for hover */
+        header img {
+            max-width: 200px; /* Adjust size of the logo */
+            height: auto;
         }
 
         section {
@@ -112,6 +90,10 @@
             margin: 10px 0;
         }
 
+        .feature-item p {
+            font-size: 1.1em;
+        }
+
         .plans {
             display: flex;
             justify-content: center;
@@ -164,9 +146,8 @@
 </head>
 <body>
     <header>
-        <h1>QC Devs</h1>
-        <p>Transform your ideas into reality with QC Devs. Develop, deploy, and scale your projects seamlessly.</p>
-        <a href="#plans" class="btn">Get Started <i class="fas fa-arrow-up-right-from-square"></i></a>
+        <!-- Website Logo -->
+        <img src="qc-logo.png" alt="QC Devs Logo">
     </header>
 
     <section class="about">
