@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- Favicon for the website (add your logo file here) -->
-    <link rel="icon" type="image/png" href="path_to_your_logo/logo.png">
+    <link rel="icon" type="image/png" href="qc-logo.png">
 
     <style>
         body {
@@ -143,18 +143,21 @@
         .btn {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #FFFF00; /* Yellow background for button */
-            color: #003366; /* Dark text for button */
+            background-color: transparent; /* Transparent background */
+            color: #FFFF00; /* Yellow text */
             text-decoration: none;
             font-weight: bold;
+            border: 2px solid #FFFF00; /* Yellow border */
             border-radius: 5px;
             margin-top: 20px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
             text-transform: uppercase; /* Capitalize text */
         }
 
         .btn:hover {
-            background-color: #f2cc00; /* Darker yellow on hover */
+            background-color: #FFFF00; /* Yellow background on hover */
+            color: #003366; /* Dark text on hover */
+            border-color: #003366; /* Dark border on hover */
         }
 
         footer {
@@ -167,7 +170,7 @@
 <body>
     <header>
         <!-- Website Logo -->
-        <img src="path_to_your_logo/logo.png" alt="QC Devs Logo">
+        <img src="qc-logo.png" alt="QC Devs Logo">
     </header>
 
     <section class="about">
