@@ -16,7 +16,6 @@
     <meta name="twitter:title" content="QC Devs | Cloud Hosting">
     <meta name="twitter:description" content="Empowering developers with fast, reliable, and scalable cloud hosting. Join QC Devs today!">
     <meta name="twitter:image" content="qc-logo.png">
-    <!-- Font Awesome Free CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>QC Devs</title>
     <style>
@@ -25,49 +24,70 @@
             margin: 0;
             padding: 0;
             color: #fff;
-            background-color: #003366;
+            background-color: #003366; /* Dark Blue */
         }
 
         header {
             padding: 20px 40px;
             text-align: center;
-            background-color: #002244;
+            background-color: #002244; /* Darker Blue */
         }
 
         header img {
-            max-width: 150px;
+            max-width: 150px; /* Adjust size of the logo */
             height: auto;
-            border-radius: 50%;
-            border: 4px solid #fff;
+            border-radius: 50%; /* Makes the logo circular */
+            border: 4px solid #fff; /* White border around the logo */
+            margin-bottom: 20px; /* Space below the logo */
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
             margin-bottom: 20px;
         }
 
-        main {
+        section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .about {
+            background-color: #004477; /* Slightly lighter blue for contrast */
             padding: 40px;
         }
 
-        .about, .features, .plans {
-            margin-bottom: 40px;
+        .about h2 {
+            font-size: 2.5em;
+            color: #fff;
         }
 
-        .features, .plans {
-            padding: 40px;
+        .about p {
+            font-size: 1.1em;
+            margin-top: 20px;
+            color: #e6f0ff; /* Lighter blue text */
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
+            padding: 40px;
             background-color: #002244;
         }
 
-        .feature-item, .plan {
+        .feature-item {
             text-align: center;
             padding: 20px;
             background-color: #004477;
             border-radius: 8px;
+            color: #fff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
         }
 
         .feature-item i {
@@ -75,53 +95,105 @@
             margin-bottom: 15px;
         }
 
-        .feature-item h3, .plan h3 {
+        .feature-item h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .feature-item p {
+            font-size: 1.1em;
+        }
+
+        .plans {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            background-color: #003366; /* Same as the rest of the body background */
+            padding: 40px;
+        }
+
+        .plan {
+            flex: 1;
+            min-width: 250px;
+            background: #004477;
+            color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .plan:hover {
+            transform: scale(1.05);
+        }
+
+        .plan h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2em;
             margin: 15px 0;
+        }
+
+        .plan ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .plan ul li {
+            margin: 10px 0;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            border: 2px solid #fff;
-            border-radius: 5px;
-            color: #fff;
-            background-color: transparent;
+            padding: 15px 30px;
+            background-color: transparent; /* Transparent background */
+            color: #fff; /* White text */
             text-decoration: none;
-            text-transform: uppercase;
             font-weight: bold;
+            border: 2px solid #fff; /* White border */
+            border-radius: 5px;
+            margin-top: 20px;
             transition: all 0.3s ease;
+            text-transform: uppercase; /* Capitalize text */
         }
 
         .btn:hover {
-            box-shadow: 0 0 15px #fff;
+            background-color: transparent;
+            color: #fff;
+            box-shadow: 0 0 15px #fff; /* Glowing white effect */
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #002244;
+            padding: 40px;
+            background-color: #002244; /* Darker Blue */
+        }
+
+        footer p {
+            margin-bottom: 20px;
         }
 
         footer .social-links a {
-            margin: 0 10px;
             color: #fff;
+            margin: 0 15px;
             font-size: 1.5em;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
 
         footer .social-links a:hover {
-            color: #fff;
-            box-shadow: 0 0 15px #fff;
+            color: #fff; /* Keep the text color white on hover */
+            box-shadow: 0 0 15px #fff; /* White glow effect */
         }
 
-        @media (max-width: 768px) {
-            header, .about, .features, .plans, footer {
-                padding: 20px;
-            }
-
-            .features, .plans {
-                gap: 20px;
-            }
+        footer .social-links {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -129,31 +201,93 @@
     <header>
         <img src="qc-logo.png" alt="QC Devs Logo">
     </header>
-    <main>
-        <section class="about">
-            <h2>About QC Devs</h2>
-            <p>Empowering developers with fast, reliable, and scalable cloud hosting.</p>
-        </section>
-        <section class="features">
-            <div class="feature-item">
-                <i class="fas fa-clock"></i>
-                <h3>99.9% Uptime</h3>
-                <p>Enterprise-grade reliability with redundant infrastructure.</p>
-            </div>
-        </section>
-        <section class="plans">
+
+    <section class="about">
+        <h2>About QC Devs</h2>
+        <p>At QC Devs, we believe in empowering developers with fast, reliable, and scalable cloud hosting. Whether you're just starting out or you're managing large-scale applications, QC Devs offers the tools and infrastructure you need to deploy, manage, and grow your projects.</p>
+        <p>Our platform is designed to be user-friendly, providing powerful hosting solutions that are built for developers by developers. With 99.9% uptime, high-performance hardware, and industry-leading security features, QC Devs is your trusted partner in cloud hosting.</p>
+        <p>Join thousands of developers worldwide who rely on QC Devs to take their projects to the next level!</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <i class="fas fa-clock"></i>
+            <h3>99.9% Uptime</h3>
+            <p>Enterprise-grade reliability with redundant infrastructure.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Advanced Security</h3>
+            <p>Built-in DDoS protection and SSL certificates for peace of mind.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-cogs"></i>
+            <h3>High Performance</h3>
+            <p>NVMe SSDs and the latest generation processors for maximum speed.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-sliders-h"></i>
+            <h3>Custom Plans</h3>
+            <p>Customize your hosting plan to fit your needs with flexible options.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-expand-arrows-alt"></i>
+            <h3>Scalable Resources</h3>
+            <p>Easily scale your resources as your needs grow.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>Expert support team always available to help you with any issues.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Affordable & Flexible Pricing Plans</h2>
+        <div class="plans">
             <div class="plan">
                 <h3>STARTER</h3>
                 <p class="price">$5</p>
+                <ul>
+                    <li>1GB RAM</li>
+                    <li>2 vCPUs</li>
+                    <li>50GB SSD Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                </ul>
                 <a href="#" class="btn">Get Started</a>
             </div>
-        </section>
-    </main>
+            <div class="plan">
+                <h3>BUSINESS</h3>
+                <p class="price">$20</p>
+                <ul>
+                    <li>4GB RAM</li>
+                    <li>8 vCPUs</li>
+                    <li>150GB SSD Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            <div class="plan">
+                <h3>ENTERPRISE</h3>
+                <p class="price">$50</p>
+                <ul>
+                    <li>16GB RAM</li>
+                    <li>32 vCPUs</li>
+                    <li>1TB SSD Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 QC Devs | All Rights Reserved</p>
+        <p>&copy; QC Devs 2024. All rights reserved.</p>
         <div class="social-links">
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
 </body>
